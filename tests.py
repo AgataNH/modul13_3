@@ -26,6 +26,7 @@ meta.create_all(engine)
 
 with open("data.csv", 'r') as file:
     reader_obj = csv.reader(file)
+    next(reader_obj, None) 
     for row in reader_obj:
         ins = data.insert().values(id=row[0], 
                                    station=row[1], 
